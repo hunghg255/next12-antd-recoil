@@ -1,6 +1,6 @@
-import { extend } from 'umi-request';
-import { ENV } from 'src/utils/env';
 import TokenManager, { injectBearer } from 'brainless-token-manager';
+import { ENV } from 'src/utils/env';
+import { extend } from 'umi-request';
 
 const REQ_TIMEOUT = 25 * 1000;
 export const isDev = ENV.NODE_ENV === 'development';
@@ -97,4 +97,4 @@ export const requestFromServer = async (ctx: any, suffixUrl: string) => {
   // }).then((r) => r.json());
 };
 
-export { request, privateRequest };
+export { privateRequest, request };
