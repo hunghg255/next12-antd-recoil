@@ -1,6 +1,6 @@
 import Home from '@components/Home';
 import MainLayout from '@layout/MainLayout';
-import { Select } from 'antd';
+import { DatePicker } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ReactElement } from 'react';
 
@@ -8,7 +8,11 @@ const HomePage = () => {
   return (
     <>
       <Home />
-      <Select />
+      <DatePicker
+        onChange={(val) => {
+          console.log(val);
+        }}
+      />
     </>
   );
 };
