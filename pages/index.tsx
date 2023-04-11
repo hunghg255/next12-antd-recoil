@@ -1,6 +1,6 @@
 import Home from '@components/Home';
 import MainLayout from '@layout/MainLayout';
-import { DatePicker } from 'antd';
+import { Breadcrumb, DatePicker, Steps } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ReactElement } from 'react';
 
@@ -12,6 +12,40 @@ const HomePage = () => {
         onChange={(val) => {
           console.log(val);
         }}
+      />
+      <Breadcrumb
+        items={[
+          {
+            title: 'Home',
+          },
+          {
+            title: <a href=''>Application Center </a>,
+          },
+          {
+            title: <a href=''>Application List</a>,
+          },
+          {
+            title: 'An Application',
+          },
+        ]}
+      />
+      <Steps
+        current={1}
+        items={[
+          {
+            title: 'Finished',
+            description: 'asdsa',
+          },
+          {
+            title: 'In Progress',
+            description: 'asdsa',
+            subTitle: 'Left 00:00:08',
+          },
+          {
+            title: 'Waiting',
+            description: 'asdsa',
+          },
+        ]}
       />
     </>
   );
