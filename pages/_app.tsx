@@ -23,7 +23,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ? Component.getLayout : (page: any) => page;
+  const getLayout = Component.getLayout ?? ((page: any) => page);
 
   return (
     <>
@@ -53,8 +53,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 // ignore in-browser next/js recoil warnings until its fixed.
 const mutedConsole = memoize((console: any) => ({
   ...console,
-  warn: (...args: any) => (args[0].includes('Duplicate atom key') ? null : console.warn(...args)),
+  warn: (...args: any) =>
+    args[0].includes('Duplicate atom key') ? undefined : console.warn(...args),
 }));
 global.console = mutedConsole(global.console);
 
+// @ts-ignore
 export default appWithTranslation(MyApp, nextI18nConfig);
