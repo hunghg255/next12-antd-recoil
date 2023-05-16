@@ -2,15 +2,17 @@ import 'antd/dist/reset.css';
 import '../public/antd.min.css';
 import '../styles/globals.scss';
 
+import type { ReactElement, ReactNode } from 'react';
+
+import type { NextPage } from 'next';
+import { appWithTranslation } from 'next-i18next';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { RecoilRoot } from 'recoil';
+
 import ErrorBoundary from '@components/ErrorBoundary';
 import AppLayout from '@layout/AppLayout';
 import { memoize } from '@utils/common';
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { appWithTranslation } from 'next-i18next';
-import type { ReactElement, ReactNode } from 'react';
-import { RecoilRoot } from 'recoil';
 
 import nextI18nConfig from '../next-i18next.config';
 
