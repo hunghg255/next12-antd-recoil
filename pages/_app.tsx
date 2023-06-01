@@ -5,9 +5,9 @@ import '../styles/globals.scss';
 import type { ReactElement, ReactNode } from 'react';
 
 import type { NextPage } from 'next';
-import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
 import { RecoilRoot } from 'recoil';
 
 import ErrorBoundary from '@components/ErrorBoundary';
